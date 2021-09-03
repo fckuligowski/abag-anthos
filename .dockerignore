@@ -1,0 +1,12 @@
+tests*
+build*
+venv*
+__pycache*
+k8s*
+helm*
+!helm/abagdemo/Chart.yaml
+*.md
+*.yaml
+.git*
+venv*
+

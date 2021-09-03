@@ -1,0 +1,17 @@
+[
+    {
+      "bag": "001",
+      "scan_time": "2018-06-29 08:15:27.243860",
+      "location": "AAUPPERWEST"
+    },
+    {
+      "bag": "001",
+      "scan_time": "2018-06-29 08:20:00.123456",
+      "location": "AALOWERWEST"
+    },
+    {
+      "bag": "001",
+      "scan_time": "2018-06-29 08:22:00.123456",
+      "location": "AACLAIM001"
+    }
+  ]

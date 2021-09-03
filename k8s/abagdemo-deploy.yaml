@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abagdemo 
+  namespace: abagdemo
+  labels:
+    app: abagdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: abagdemo 
+  template:
+    metadata:
+      labels:
+        app: abagdemo
+    spec:
+      containers:
+      - name: abagdemo
+        image: gcr.io/fk-test-04/abagdemo:v0.0.1
+        ports:
+        - containerPort: 5000
+        env:
+          - name: GOOGLE_APPLICATION_CREDENTIALS
+            value: "/home/abagdemo/instance/creds/fk-test-04-abag-anthos.json"
+        command: ["/bin/sh", "/abagdemo/runit.sh"]
+        volumeMounts:
+        - name: gcp-creds
+          mountPath: "/home/abagdemo/instance/creds"
+      volumes:
+        - name: gcp-creds
+          secret:
+            secretName: abagdemo-gcp-creds
